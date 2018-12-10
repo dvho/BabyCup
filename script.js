@@ -1,20 +1,20 @@
-var count = 0; //Count begins at god()
-var mood = 5; //Initialize mood
-var feelings = 0; //Initialize feelings
-var name = false; //Initialize name
-var t = 0; //Initialize t, later equal to setTimeout(eyeIrises, 3000)
-var tt = 0; //Initialize tt, later equal to setTimeout(callBlink, 2500)
-var ttt = 0; //Initialize ttt, later equal to setTimeout(emotion, mouthRate)
-var mouthSmallChange = 1; //Initialize mouthSmallChange
-var mouthBigChange = 1; //Initialize mouthBigChange
-var browPosition = 4; //Initialize browPosition
-var tempBrowPosition = 3; //Initialize tempBrowPosition
-var randomOffset = 0; //Initialize randomOffset for eyebrows
-var devilBrowSwitch = false; //Initialize devilBrowSwitch
-var devilAtLeastOnce = false; //Initialize devilAtLeastOnce so that afterwards the angel can appear
-var haloBrowSwitch = false; //Initialize haloBrowSwitch but technicaly it doesn't matter if it's true or false since devilAtLeastOnce will be the operative variable in dictating halo state long after haloBrowSwitch has probably already changed to false many times
+var count = 0; //Count begins at god().
+var mood = 5; //Initialize mood.
+var feelings = 0; //Initialize feelings.
+var name = false; //Initialize name.
+var t = 0; //Initialize t, later equal to setTimeout(eyeIrises, 3000).
+var tt = 0; //Initialize tt, later equal to setTimeout(callBlink, 2500).
+var ttt = 0; //Initialize ttt, later equal to setTimeout(emotion, mouthRate).
+var mouthSmallChange = 1; //Initialize mouthSmallChange.
+var mouthBigChange = 1; //Initialize mouthBigChange.
+var browPosition = 4; //Initialize browPosition.
+var tempBrowPosition = 3; //Initialize tempBrowPosition.
+var randomOffset = 0; //Initialize randomOffset for eyebrows.
+var devilBrowSwitch = false; //Initialize devilBrowSwitch.
+var devilAtLeastOnce = false; //Initialize devilAtLeastOnce so that afterwards the angel can appear.
+var haloBrowSwitch = false; //Initialize haloBrowSwitch but technicaly it doesn't matter if it's true or false since devilAtLeastOnce will be the operative variable in dictating halo state long after haloBrowSwitch has probably already changed to false numerous times.
 
-//BABYCUP TOGGLES OPACITY ONCE ON LOAD TO CONCEAL HALO, DEVIL STATE AND TEARS AS THEY LOAD
+//BABY CUP TOGGLES OPACITY ONCE ON LOAD TO CONCEAL HALO, DEVIL STATE AND TEARS AS THEY LOAD
 var babyCup = document.getElementById('babyCup');
 babyCup.onload = appearToggle();
 function appearToggle() {
@@ -35,6 +35,14 @@ rightEye.onclick = rightEyeToggle();
 function rightEyeToggle() {
     rightEye.classList.toggle('righteye__1');
     rightEye.classList.toggle('righteye__2');
+};
+
+//CUP COMPENSATION POSITION TOGGLES
+var cupCompensation = document.getElementById('cup-compensation');
+cupCompensation.onclick = cupCompensationToggle();
+function cupCompensationToggle() {
+    cupCompensation.classList.toggle('cup-compensation__1');
+    cupCompensation.classList.toggle('cup-compensation__2');
 };
 
 //CUP POSITION TOGGLES
@@ -67,7 +75,7 @@ function handleToggle() {
     handle.classList.toggle('handle__2');
 };
 
-//LEFT IRIS SWITCHES AMONG 56 DIFFERENT CLASSES WHEN BEHAVIOR IS DICTATED BY PYRAMID OF RANDOM SOLUTIONS AND 9 DIFFERENT CLASSES WHEN HE'S INTERACTING VIA VOICE COMMAND
+//LEFT IRIS SWITCHES AMONG 56 DIFFERENT CLASSES WHEN BEHAVIOR IS DICTATED BY PYRAMID OF RANDOM SOLUTIONS AND 9 DIFFERENT CLASSES WHEN INTERACTING VIA VOICE COMMAND
 function irisLeftEyeSwitch(position) {
     var newTempStr = `<div id="iris-lefteye" class="iris-${position}"></div>`;
     var child = document.getElementById('iris-lefteye');
@@ -76,7 +84,7 @@ function irisLeftEyeSwitch(position) {
     parent.insertAdjacentHTML('beforeend', newTempStr);
 };
 
-//RIGHT IRIS SWITCHES AMONG 56 DIFFERENT CLASSES WHEN BEHAVIOR IS DICTATED BY PYRAMID OF RANDOM SOLUTIONS AND 9 DIFFERENT CLASSES WHEN HE'S INTERACTING VIA VOICE COMMAND
+//RIGHT IRIS SWITCHES AMONG 56 DIFFERENT CLASSES WHEN BEHAVIOR IS DICTATED BY PYRAMID OF RANDOM SOLUTIONS AND 9 DIFFERENT CLASSES WHEN INTERACTING VIA VOICE COMMAND
 function irisRightEyeSwitch(position) {
     var newTempStr = `<div id="iris-righteye" class="iris-${position}"></div>`;
     var child = document.getElementById('iris-righteye');
@@ -85,7 +93,7 @@ function irisRightEyeSwitch(position) {
     parent.insertAdjacentHTML('beforeend', newTempStr);
 };
 
-//FUNCTION THAT CALLS THE TWO IRIS FUNCTIONS SO THEY CAN HAVE THEIR OWN SEPERATE TIMING WITHIN THE SPAN THAT GOD() DOESN'T CALL THEM/CLEAR THE ASSOCIATED TIMEOUT
+//FUNCTION THAT CALLS THE TWO IRIS FUNCTIONS SO THEY CAN HAVE THEIR OWN SEPERATE TIMING WITHIN THE INTERVAL THAT GOD() DOESN'T CALL THEM/CLEAR THE ASSOCIATED TIMEOUT
 function eyeIrises() {
     let position;
     if (name == true) {
@@ -105,7 +113,7 @@ function eyesToggle() {
     eyes.classList.toggle('eyes__1');
     eyes.classList.toggle('eyes__2');
 };
-//THE EYES PARENT CLASS TOGGLING FUNCTION IS CALLED TWICE IN SUCCESSION (A BLINK) AT A RATE DESIGNATED BY A RANDOM VARIABLE BETWEEN .02 AND .12 SECONDS DEPICTING THE LENGTH OF TIME THE EYES ARE CLOSED
+//THE EYES PARENT CLASS TOGGLING FUNCTION IS CALLED TWICE IN SUCCESSION (A BLINK) AT A RATE DESIGNATED BY A RANDOM VARIABLE BETWEEN 20ms AND 120ms DEPICTING THE LENGTH OF TIME THE EYES ARE CLOSED
 function blink() {
     var blinkSuspenseTime = Math.random()*100 + 20;
     eyesToggle();
@@ -160,16 +168,16 @@ function browLeftSwitchPlusSpirit(browPosition) {
     parent.insertAdjacentHTML('beforeend', newTempStr);
 
     if (browPosition === 0) {
-        devilAtLeastOnce = true; // Once babyCup has been devil at least once, he can toggle to angel.
-        devilBrowSwitch = true; // Designates when babyCup is devil.
+        devilAtLeastOnce = true; // Once Baby Cup has been devil at least once, he can toggle to angel.
+        devilBrowSwitch = true; // Designates when Baby Cup is devil.
     } else {
-        devilBrowSwitch = false; //Designates when babyCup is not devil.
+        devilBrowSwitch = false; //Designates when Baby Cup is not devil.
     }
 
     if (browPosition === 5) {
-        haloBrowSwitch = true; //Designates when babyCup is angel.
+        haloBrowSwitch = true; //Designates when Baby Cup is angel.
     } else {
-        haloBrowSwitch = false; //Designates when babyCup is not angel.
+        haloBrowSwitch = false; //Designates when Baby Cup is not angel.
     }
 };
 
@@ -191,7 +199,7 @@ function browRightSwitch(browPosition) {
     parent.insertAdjacentHTML('beforeend', newTempStr);
 };
 
- //MOUTH SWITCHES AMONG 72 POSITIONS - 3 LARGE STATES, 3 SMALL STATES FOR EACH OF THE 3 LARGE STATES, AND 8 POSITIONS FOR EACH OF THE 3 SMALL STATES
+ //MOUTH SWITCHES AMONG 72 POSITIONS WITHOUT VOICE COMMAND, 120 POSITIONS WITH - 3 LARGE STATES (5 IN THE CASE OF VOICE COMMAND), 3 SMALL STATES FOR EACH OF THE LARGE STATES, AND 8 POSITIONS FOR EACH OF THE 3 SMALL STATES
 function mouthSwitch(mouthBigChange, mouthSmallChange, mouthPosition) {
     var newTempStr = `<div id="mouth" class="mouth__${mouthBigChange}-${mouthSmallChange}-${mouthPosition}"></div>`;
     var child = document.getElementById('mouth');
@@ -200,6 +208,7 @@ function mouthSwitch(mouthBigChange, mouthSmallChange, mouthPosition) {
     parent.insertAdjacentHTML('beforeend', newTempStr);
 };
 
+//WHEN BABY CUP IS ACTIVATED BY VOICE COMMAND, emotion() PULLS MOOD VARIABLE FROM GLOBAL SCOPE TO CALCULATE BROW AND MOUTH POSITIONS, OTHERWISE THEY ARE CALCULATED BY HIGHER TIERS IN THE PYRAMID OF RANDOMNESS
 function emotion() {
 
     var chanceOfEyebrowChange;
@@ -238,7 +247,7 @@ function emotion() {
             mouthSmallChange = Math.ceil(Math.random() * 3); //If there's going to be a small mouth change it could change among all 3 respective states (including the one it's currently in) with 33% probability.
         }
 
-        var mouthRate = 800 / mouthSmallChange; //The rate at which the mouth animates is .8 seconds divided by 1, 2 or 3, the indices of any given set of small mouth state changes (a function of how open it is).
+        var mouthRate = 800 / mouthSmallChange; //The rate at which the mouth animates is 800ms divided by 1, 2 or 3, the indices of any given set of small mouth state changes (i.e. a factor of how open it is).
 
     }
 
@@ -378,10 +387,11 @@ function emotion() {
     }
 
     setTimeout(function() {
-            clearTimeout(t); //Clear the timeout for the eye iris function
-            clearTimeout(tt); //Clear the timeout for the function that calls blink
-            clearTimeout(ttt); //Clear the timeout for the emotion function
+            clearTimeout(t); //Clear the timeout for the eye iris function.
+            clearTimeout(tt); //Clear the timeout for the function that calls blink.
+            clearTimeout(ttt); //Clear the timeout for the emotion function.
             cupToggle();
+            cupCompensationToggle();
             handleToggle();
             leftEyeToggle();
             rightEyeToggle();
@@ -393,7 +403,7 @@ function emotion() {
 }());
 
 /*
-ID 'INTERCEPT' WAS GIVEN TO A CHILD BUTTON OF THE BODY TAG IN ORDER TO TEST THE MECHANICS OF BABYCUP
+ID 'INTERCEPT' WAS GIVEN TO A CHILD BUTTON OF THE BODY TAG IN ORDER TO TEST THE MECHANICS OF BABY CUP
 document.getElementById('intercept').addEventListener('click', function(e){
     e.preventDefault();
         haloToggle(); //This is just an example of functions tested with this button.
@@ -522,5 +532,5 @@ recognition.addEventListener('result', e => {
 
 });
 
-recognition.addEventListener('end', recognition.start);
+recognition.addEventListener('end', recognition.start); //On end, start again.
 recognition.start();

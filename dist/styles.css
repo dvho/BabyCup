@@ -203,18 +203,19 @@
 
 .drip {
     position: absolute;
-    top: -7px;
-    left: -89px;
-    width: 172px;
-    height: 20px;
+    top: -9px;
+    left: -86px;
+    width: 162px;
+    height: 18px;
     margin-left: 50%;
     background-color: #f499b8;
     border-width: 4px 6px 6px 6px;
     border-style: solid;
     border-color: #000;
-    z-index: 10px;
+    z-index: 30px;
     border-radius: 0 0 20px 20px;
     transform: perspective(300px) rotateX(-45deg);
+    transform-origin: bottom;
 }
 
 .spout {
@@ -226,13 +227,15 @@
     margin-left: 50%;
     background-color: #c7e1b2;
     border: 4px solid #000;
+    z-index: 30px;
     border-radius: 0 0 10px 10px;
     transform: perspective(300px) rotateX(-45deg);
+    transform-origin: bottom;
 }
 
 .base {
     position: absolute;
-    top: 290px;
+    top: 295px;
     left: -92px;
     width: 180px;
     height: 38px;
@@ -244,9 +247,9 @@
     z-index: 20;
 }
 
-.bottom { /* Bottom needs a z-index higher than eyes__1 because when eyes__1 is active it displaces #lefteye and #righteye down instead of actually hiding them, and they end up displaced below the bottom. If z-index isn't above 10 both eyes will flash down there upon blinking. */
+.bottom {
     position: absolute;
-    top: 496px;
+    top: 500px;
     left: -225px;
     width: 450px;
     height: 52px;
@@ -255,6 +258,7 @@
     border: 6px solid #000;
     border-radius: 0px 0px 90px 90px;
     z-index: 15;
+
 }
 
 .on__button {
@@ -267,16 +271,19 @@
     background-color: #f499b8;
     border: 4px solid #000;
     border-radius: 4px 4px 4px 4px;
+
 }
 
-/*---------------------------------------HERE'S WHERE ALL THE ANIMATION HAPPENS---------------------------------------*/
+
+
+/*---------------------------------------HERE'S WHERE ALL THE TOGGLING AND CLASS SWAPPING ANIMATION HAPPENS---------------------------------------*/
 
 #handle {
     position: absolute;
     top: 144px;
     left: 85px;
-    width: 25px;
-    height: 110px;
+    width: 20px;
+    height: 100px;
     margin-left: 50%;
     border-top: 10px solid #000;
     border-right: 9px solid #000;
@@ -284,25 +291,41 @@
     border-radius: 30px;
 }
 .handle__1 {
-    transform: perspective(240px) rotateX(-45deg) rotateZ(3deg);
+    transform: perspective(340px) rotateX(-45deg) rotateZ(4deg);
     transition-property: transform;
     transition-duration: 1s;
     transition-timing-function: ease;
 }
 .handle__2 {
-    transform: translateX(3px) perspective(340px) rotateX(-45deg) rotateZ(7deg);
+    transform: translateX(2px) translateY(8px) perspective(240px) rotateX(-45deg) rotateZ(7deg);
     transition-property: transform;
     transition-duration: 1s;
     transition-timing-function: ease;
 }
 
-#cup {
+#cup-compensation { /* Cup__1 and Cup__2 needed rotate(X) transitions which were hiding the eyes in Safari (and eyes couldn't be children of cup becauase rotate(X) of cup was changing their shape). The solution was to change cup transition origin from center to top to allow eyes to be visible, then counter transition motion with this empty parent div, which counters the left/right toggle between cup__1 and cup__2 to maintain the original rocking feel. */
     position: absolute;
-    top: 110px;
-    left: -80px;
-    width: 150px;
-    height: 220px;
+    top: 138px;
+    width: 10px;
+    height: 10px;
     margin-left: 50%;
+}
+.cup-compensation__1 {
+    left: -95px;
+    transition-property: left;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+.cup-compensation__2 {
+    left: -85px;
+    transition-property: left;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#cup {
+    width: 170px;
+    height: 280px;
     background-color: #fff;
     border: 10px solid #000;
     border-radius: 0 0 90px 90px;
@@ -311,21 +334,23 @@
 }
 .cup__1 {
     transform: perspective(600px) rotateX(-40deg) rotateZ(-2deg);
+    transform-origin: top;
     transition-property: transform;
     transition-duration: 1s;
     transition-timing-function: ease;
 }
 .cup__2 {
     transform: perspective(600px) rotateX(-40deg) rotateZ(2deg);
+    transform-origin: top;
     transition-property: transform;
     transition-duration: 1s;
     transition-timing-function: ease;
 }
 
-#cup-overlay {
+#cup-overlay { /* Toggles between white and red when devil is actived upon brow position 0 */
     position: absolute;
-    height: 220px;
-    width: 150px;
+    height: 284px;
+    width: 170px;
     border-radius: 0 0 90px 90px;
     z-index: 10;
 }
@@ -335,26 +360,6 @@
 }
 .cup-overlay-2 {
     background-color: tomato;
-    transition: .6s ease;
-}
-
-#invisible-nose-bridge {  /* This is the white triangle that blocks the center of the eyes__1 bar so that it looks like two closed eyes rather than a horizonal bar. It has to have a z-index higher than  eyes__1*/
-    position: absolute;
-    top: 176px;
-    left: -30px;
-    width: 10px;
-    height: 0px;
-    margin-left: 50%;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    z-index: 15;
-}
-.invisible-nose-bridge-1 {
-    border-bottom: 24px solid #fff;
-    transition: .3s ease;
-}
-.invisible-nose-bridge-2 {
-    border-bottom: 24px solid tomato;
     transition: .6s ease;
 }
 
@@ -420,12 +425,12 @@
     border-radius: 0 30px 30px 30px;
 }
 .tearleft-1 {
-    top: 36px;
+    top: 74px;
     opacity: 1;
     transition: all 0s ease;
 }
 .tearleft-2 {
-    top: 70px;
+    top: 108px;
     opacity: 0;
     transition: all .4s ease;
 }
@@ -442,18 +447,20 @@
     border-radius: 0 30px 30px 30px;
 }
 .tearright-1 {
-    top: 36px;
+    top: 74px;
     opacity: 1;
     transition: all 0s ease;
 }
 .tearright-2 {
-    top: 70px;
+    top: 108px;
     opacity: 0;
     transition: all .4s ease;
 }
 
 #lefteyebrow {
     position:absolute;
+    top: 10px;
+    left: 8px;
     width:38px;
     height:38px;
     border-top-left-radius:100px;
@@ -462,6 +469,8 @@
 }
 #righteyebrow {
     position:absolute;
+    top: 10px;
+    left: -8px;
     width:38px;
     height:38px;
     border-top-left-radius:100px;
@@ -529,25 +538,49 @@
     box-shadow: -4px -4px 1px -5px black;
 }
 
-.eyes__1 {  /* The actual eyes are in a div superimposed onto the image described here which is both eyes together in a blinking state. */
+#invisible-nose-bridge {  /* This is the white triangle that seperates closed-eyes in the center. It toggles color with cup-overlay. */
     position: absolute;
-    top: 180px;
-    left: -60px;
-    width: 130px;
+    top: 75px;
+    left: -46px;
+    width: 30px;
+    height: 0px;
+    margin-left: 50%;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    z-index: 9999;
+}
+.invisible-nose-bridge-1 {
+    border-bottom: 24px solid white;
+    transition: .3s ease;
+}
+.invisible-nose-bridge-2 {
+    border-bottom: 24px solid tomato;
+    transition: .6s ease;
+}
+
+#closed-eyes { /* Sits behind eyes and is seen in the random value bewteen 20-120ms that eyes__2 toggles back and forth to eyes__1 (i.e. the blink) */
+    position: absolute;
+    top: 77px;
+    left: -72px;
+    width: 142px;
     height: 18px;
     margin-left: 50%;
     background-color: #000;
     border-radius: 30px;
     z-index: 10;
 }
+
+.eyes__1 {
+    visibility: hidden;
+}
 .eyes__2 {
-    /* This empty class is the alternative for .eyes__1, which displaces the children under the .bottom in the quick 20-120ms inerval of mid-blink. */
+    visibility: visible;
 }
 
 #righteye {
     position: absolute;
-    top: 160px;
-    left: -64px;
+    top: 177px;
+    left: -63px;
     width: 50px;
     height: 50px;
     margin-left: 50%;
@@ -570,8 +603,8 @@
 
 #lefteye {
     position: absolute;
-    top: 157px;
-    left: 19px;
+    top: 174px;
+    left: 18px;
     width: 50px;
     height: 50px;
     margin-left: 50%;
@@ -603,7 +636,7 @@
     border-radius: 8px;
     box-shadow: inset 0px 0px 1px 2px #9edae4;
 }
-.iris-1 {transform: translateX(0px) translateY(0px);} /* In this case where 57 classes differ only by transform property I consolidated 3 lines into 1 for easier reading */
+.iris-1 {transform: translateX(0px) translateY(0px);} /* In this case where 65 classes differ only by transform property I consolidated 3 lines into 1 for easier reading */
 .iris-2 {transform: translateX(5px) translateY(2px);}
 .iris-3 {transform: translateX(9px) translateY(5px);}
 .iris-4 {transform: translateX(12px) translateY(9px);}
@@ -673,7 +706,7 @@
 
 #mouth {
     position: absolute;
-    top: 122px;
+    top: 170px;
     left: -36px;
     margin-left: 50%;
     z-index: 20;
