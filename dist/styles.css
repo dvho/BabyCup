@@ -1,5 +1,5 @@
 body {
-    background-color: gray;
+    background-color: #000;
 }
 
 .babyCup-1 {
@@ -23,6 +23,7 @@ body {
     background-color: #e7f3dd;
     border: 8px solid #000;
     border-radius: 68px 68px 0px 0px;
+    box-shadow: -1px -1px 14px -2px rgba(109, 109, 255, .8), 1px -1px 14px -2px rgba(109, 109, 255, .8);
 }
 
 .dials {
@@ -80,7 +81,7 @@ body {
     top: 0;
     left: -1px;
     width: 3px;
-    height: 54px;
+    height: 53px;
     margin-left: 50%;
     background-color: #000;
 }
@@ -88,7 +89,7 @@ body {
     position: absolute;
     top: 22px;
     left: -27px;
-    width: 54px;
+    width: 52px;
     height: 3px;
     margin-left: 50%;
     background-color: #000;
@@ -105,6 +106,7 @@ body {
     border-style: solid;
     border-color: #000;
     border-width: 8px 8px 6px 8px;
+    box-shadow: -1px 6px 14px -2px rgba(109, 109, 255, .8), 1px 6px 14px -2px rgba(109, 109, 255, .8);
 }
 
 .back {
@@ -118,6 +120,7 @@ body {
     border-style: solid;
     border-color: #000;
     border-width: 6px 8px 8px 8px;
+    box-shadow: -1px 6px 14px -2px rgba(109, 109, 255, .8), 1px 6px 14px -2px rgba(109, 109, 255, .8);
 }
 
 .drip {
@@ -176,6 +179,7 @@ body {
     background-color: #e7f3dd;
     border: 8px solid #000;
     border-radius: 0px 0px 90px 90px;
+    box-shadow: -2px 2px 14px -3px rgba(109, 109, 255, .8), 2px 2px 14px -3px rgba(109, 109, 255, .8);
     z-index: 15;
 }
 
@@ -196,7 +200,7 @@ body {
 #handle {
     position: absolute;
     top: 216px;
-    left: 128px;
+    left: 120px;
     width: 30px;
     height: 150px;
     margin-left: 50%;
@@ -226,13 +230,13 @@ body {
     margin-left: 50%;
 }
 .cup-compensation__1 {
-    left: -143px;
+    left: -151px;
     transition-property: left;
     transition-duration: 1s;
     transition-timing-function: ease;
 }
 .cup-compensation__2 {
-    left: -128px;
+    left: -136px;
     transition-property: left;
     transition-duration: 1s;
     transition-timing-function: ease;
@@ -495,7 +499,7 @@ body {
 #righteye {
     position: absolute;
     top: 266px;
-    left: -95px;
+    left: -103px;
     width: 75px;
     height: 75px;
     margin-left: 50%;
@@ -519,7 +523,7 @@ body {
 #lefteye {
     position: absolute;
     top: 261px;
-    left: 27px;
+    left: 19px;
     width: 75px;
     height: 75px;
     margin-left: 50%;
