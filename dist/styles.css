@@ -34,35 +34,45 @@ body {
     margin-left: 50%;
     background-color: #f499b8;
     border: 6px solid #000;
-    border-radius: 45px 45px 45px 45px;
+    border-radius: 60px 60px 60px 60px;
 }
 .dial-1 {
     left: -150px;
     transform-origin: 50% 50%;
-        animation: rotate1 6s infinite linear; }
-    @keyframes rotate1 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(360deg); } }
+        animation: rotateDial1A 6s infinite linear; }
+    @keyframes rotateDial1A {
+        from { transform: rotate(0); }
+        to { transform: rotate(360deg); }
+        }
+    @keyframes rotateDial1B {
+        from { transform: rotate(0); }
+        to { transform: rotate(-7200deg); }
+        }
+
 .dial-2 {
     left: -30px;
     transform-origin: 50% 50%;
-        animation: rotate2 4.2s infinite linear; }
-    @keyframes rotate2 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(-360deg); } }
+        animation: rotateDial2A 5s infinite linear; }
+    @keyframes rotateDial2A {
+        from { transform: rotate(0); }
+        to { transform: rotate(-360deg); }
+        }
+    @keyframes rotateDial2B {
+        from { transform: rotate(0); }
+        to { transform: rotate(9000deg); }
+        }
 .dial-3 {
     left: 92px;
     transform-origin: 50% 50%;
-        animation: rotate3 6s infinite linear; }
-    @keyframes rotate3 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(360deg); } }
+        animation: rotateDial3A 7s infinite linear; }
+    @keyframes rotateDial3A {
+        from { transform: rotate(0); }
+        to { transform: rotate(360deg); }
+        }
+    @keyframes rotateDial3B {
+        from { transform: rotate(0); }
+        to { transform: rotate(-5400deg); }
+        }
 
 .dialpins {
     position: absolute;
@@ -176,6 +186,7 @@ body {
     width: 675px;
     height: 78px;
     margin-left: 50%;
+    margin-bottom: 13px;
     background-color: #e7f3dd;
     border: 8px solid #000;
     border-radius: 0px 0px 90px 90px;

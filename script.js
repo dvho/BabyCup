@@ -534,3 +534,98 @@ recognition.addEventListener('result', e => {
 
 recognition.addEventListener('end', recognition.start); //On end, start again.
 recognition.start();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const dial1 = document.getElementById('dial-1');
+const dial2 = document.getElementById('dial-2');
+const dial3 = document.getElementById('dial-3');
+
+//ADD EVENT LISTENER TO WHICHEVER DIAL IS PASSED AS AN ARGUMENT
+function allowDialEvents(dial) {
+    ['click', 'touchstart'].forEach(function(e){
+        if (dial === dial1) {
+            dial.addEventListener(e, dial1Spin);
+        }
+        if (dial === dial2) {
+            dial.addEventListener(e, dial2Spin);
+        }
+        if (dial === dial3) {
+            dial.addEventListener(e, dial3Spin);
+        }
+    });
+};
+
+//REMOVE EVENT LISTENER TO WHICHEVER DIAL IS PASSED AS AN ARGUMENT
+function removeDialEvents(dial) {
+    ['click', 'touchstart'].forEach(function(e){
+        if (dial === dial1) {
+            dial.removeEventListener(e, dial1Spin);
+        }
+        if (dial === dial2) {
+            dial.removeEventListener(e, dial2Spin);
+        }
+        if (dial === dial3) {
+            dial.removeEventListener(e, dial3Spin);
+        }
+    });
+};
+
+//DIAL1 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
+function dial1Spin() {
+    dial1.style.animation = `rotateDial1B 6s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
+    removeDialEvents(dial1);
+    setTimeout(function() {
+        dial1.style.animation = `rotateDial1A 6s infinite linear`;
+    }, 6000);
+    setTimeout(allowDialEvents, 6000, dial1);
+};
+
+//DIAL2 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
+function dial2Spin() {
+    dial2.style.animation = `rotateDial2B 13s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
+    removeDialEvents(dial2);
+    setTimeout(function() {
+        dial2.style.animation = `rotateDial2A 5s infinite linear`;
+    }, 13000);
+    setTimeout(allowDialEvents, 13000, dial2);
+};
+
+//DIAL3 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
+function dial3Spin() {
+    dial3.style.animation = `rotateDial3B 7s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
+    removeDialEvents(dial3);
+    setTimeout(function() {
+        dial3.style.animation = `rotateDial3A 7s infinite linear`;
+    }, 7000);
+    setTimeout(allowDialEvents, 7000, dial3);
+};
+
+//FIRE UP EVENT LISTENERS - PASS EACH DIAL ELEMENT TO THE FUNCTION THAT ADDS THE TOUCHSTART AND CLICK EVENT LISTENERS
+allowDialEvents(dial1);
+allowDialEvents(dial2);
+allowDialEvents(dial3);
