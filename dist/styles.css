@@ -167,11 +167,12 @@ body {
 
 .pours {
     position: absolute;
-    height: 230px;
+    height: 208px;
     width: 15px;
     margin-left: 50%;
     transform-origin: top;
     transform: scaleY(.01);
+    z-index: 10;
 }
 #milk-pour {
     left: -20px;
@@ -216,39 +217,39 @@ body {
 @keyframes dribble {
     0% { top: 42px;
          opacity: 1; }
-    2% {  top: 300px;
+    2% {  top: 200px;
             opacity: 0; }
     3% {  top: 42px;
             opacity: 1; }
-    7% {  top: 300px;
+    7% {  top: 200px;
             opacity: 0; }
     8% {  top: 42px;
             opacity: 1; }
-    14% {  top: 300px;
+    14% {  top: 200px;
             opacity: 0; }
     15% {  top: 42px;
             opacity: 1; }
-    23% {  top: 300px;
+    23% {  top: 200px;
             opacity: 0; }
     24% {  top: 42px;
             opacity: 1; }
-    34% {  top: 300px;
+    34% {  top: 200px;
             opacity: 0; }
     35% {  top: 42px;
             opacity: 1; }
-    47% {  top: 300px;
+    47% {  top: 200px;
             opacity: 0; }
     48% {  top: 42px;
             opacity: 1; }
-    62% {  top: 300px;
+    62% {  top: 200px;
             opacity: 0; }
     63% {  top: 42px;
             opacity: 1; }
-    79% {  top: 300px;
+    79% {  top: 200px;
             opacity: 0; }
     80% {  top: 42px;
             opacity: 1; }
-    99% {  top: 300px;
+    99% {  top: 200px;
             opacity: 0; }
     100% {  top: 42px;
             opacity: 1; }
@@ -256,6 +257,7 @@ body {
 @keyframes blast {
     0% { transform: scaleX(.01) scaleY(.01); }
     25% { transform: scaleX(2) scaleY(1); }
+    61% { transform: scaleX(.3) scaleY(1); }
     97% { transform: scaleX(.03) scaleY(1); }
     100% { transform: scaleX(.01) scaleY(.01); }
 }
