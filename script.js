@@ -429,24 +429,59 @@ document.getElementById('intercept').addEventListener('click', function(e){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const dial1 = document.getElementById('dial-1');
 const dial2 = document.getElementById('dial-2');
 const dial3 = document.getElementById('dial-3');
+const liquid1a = document.getElementById('espresso-pour');
+const liquid1b = document.getElementById('espresso-dribble');
+const liquid2a = document.getElementById('milk-pour');
+const liquid2b = document.getElementById('milk-dribble');
+const liquid3 = document.getElementById('syrup-pour');
+
+
+
+function flavorPour(color) {
+    setTimeout(function() {
+        liquid3.style.backgroundColor = color;
+        liquid3.style.animation = `blast 2s ease`;
+    }, 1500);
+    setTimeout(function() {
+        liquid3.style.animation = ``;
+    }, 3500);
+}
+
+
+//1500ms AFTER FUNCTION IS CALLED POUR THE ESPRESSO AND THEN RESET ANIMATION TO EMPTY STRING ONCE COMPLETE.
+function milkPour() {
+    setTimeout(function() {
+        liquid2a.style.animation = `pour 4.5s ease`;
+    }, 1500);
+    setTimeout(function() {
+        liquid2a.style.animation = ``;
+    }, 6000);
+    setTimeout(function() {
+        liquid2b.style.animation = `dribble 3s linear`; //Having more than 2%s in the keyframe auto sets the easing function to linear for some reason, so all my custom bezier curves were overridden, and deceleratin of dribble had to be depicted by the percentages themselves in the stylesheet
+    }, 6000);
+    setTimeout(function() {
+        liquid2b.style.animation = ``;
+    }, 9000);
+}
+
+//1500ms AFTER FUNCTION IS CALLED POUR THE ESPRESSO AND THEN RESET ANIMATION TO EMPTY STRING ONCE COMPLETE.
+function espressoPour() {
+    setTimeout(function() {
+        liquid1a.style.animation = `pour 2s ease`;
+    }, 1000);
+    setTimeout(function() {
+        liquid1a.style.animation = ``;
+    }, 3000);
+    setTimeout(function() {
+        liquid1b.style.animation = `dribble 3s linear`; //Having more than 2%s in the keyframe auto sets the easing function to linear for some reason, so all my custom bezier curves were overridden, and deceleratin of dribble had to be depicted by the percentages themselves in the stylesheet
+    }, 3000);
+    setTimeout(function() {
+        liquid1b.style.animation = ``;
+    }, 7000);
+}
 
 //ADD EVENT LISTENER TO WHICHEVER DIAL IS PASSED AS AN ARGUMENT
 function allowDialEvents(dial) {
@@ -480,6 +515,7 @@ function removeDialEvents(dial) {
 
 //DIAL1 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
 function dial1Spin() {
+    espressoPour();
     dial1.style.animation = `rotateDial1B 6s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
     removeDialEvents(dial1);
     setTimeout(function() {
@@ -490,6 +526,7 @@ function dial1Spin() {
 
 //DIAL2 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
 function dial2Spin() {
+    milkPour();
     dial2.style.animation = `rotateDial2B 13s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
     removeDialEvents(dial2);
     setTimeout(function() {
@@ -500,6 +537,8 @@ function dial2Spin() {
 
 //DIAL3 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
 function dial3Spin() {
+    let color = `#512A09`; //Eventually change to crazy multicolors that cycle randomly
+    flavorPour(color);
     dial3.style.animation = `rotateDial3B 7s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
     removeDialEvents(dial3);
     setTimeout(function() {
