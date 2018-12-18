@@ -172,17 +172,19 @@ body {
     margin-left: 50%;
     transform-origin: top;
     transform: scaleY(.01);
-    z-index: 10;
 }
 #milk-pour {
+    top: 0px;
     left: -20px;
     background-color: #fffff0;
 }
 #espresso-pour {
+    top: 1px;
     left: -40px;
     background-color: #330c00;
 }
 #syrup-pour {
+    top: 1px;
     left: 20px;
 }
 
