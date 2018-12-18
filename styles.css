@@ -46,7 +46,7 @@ body {
         }
     @keyframes rotateDial1B {
         from { transform: rotate(0); }
-        to { transform: rotate(-7200deg); }
+        to { transform: rotate(7200deg); }
         }
 
 .dial-2 {
@@ -59,7 +59,7 @@ body {
         }
     @keyframes rotateDial2B {
         from { transform: rotate(0); }
-        to { transform: rotate(9000deg); }
+        to { transform: rotate(-9000deg); }
         }
 .dial-3 {
     left: 92px;
@@ -67,7 +67,7 @@ body {
         animation: rotateDial3A 7s infinite linear; }
     @keyframes rotateDial3A {
         from { transform: rotate(0); }
-        to { transform: rotate(360deg); }
+        to { transform: rotate(-360deg); }
         }
     @keyframes rotateDial3B {
         from { transform: rotate(0); }
@@ -164,6 +164,108 @@ body {
     transform: perspective(450px) rotateX(-45deg);
     transform-origin: bottom;
 }
+
+.pours {
+    position: absolute;
+    height: 230px;
+    width: 15px;
+    margin-left: 50%;
+    transform-origin: top;
+    transform: scaleY(.01);
+}
+#milk-pour {
+    left: -20px;
+    background-color: #fffff0;
+}
+#espresso-pour {
+    left: -40px;
+    background-color: #330c00;
+}
+#syrup-pour {
+    left: 20px;
+}
+
+.dribbles {
+    position: absolute;
+    top: 42px;
+    height: 15px;
+    width: 15px;
+    margin-left: 50%;
+    border-radius: 0 8px 8px 8px;
+    transform: rotate(45deg) translateX(4px) translateY(4px);
+    opacity: 0;
+}
+#milk-dribble {
+    left: -20px;
+    background-color: #fffff0;
+}
+#espresso-dribble {
+    left: -40px;
+    background-color: #330c00;
+}
+
+@keyframes pour {
+    0% { transform: scaleX(.01) scaleY(.01); }
+    10% { transform: scaleX(1) scaleY(1); }
+    80% { transform: scaleX(1); }
+    90% { transform: scaleX(.3); }
+    93% { transform: scaleX(.7); }
+    95% { transform: scaleX(.01) scaleY(1); }
+    100% { transform: scaleY(.01); }
+}
+@keyframes dribble {
+    0% { top: 42px;
+         opacity: 1; }
+    2% {  top: 300px;
+            opacity: 0; }
+    3% {  top: 42px;
+            opacity: 1; }
+    7% {  top: 300px;
+            opacity: 0; }
+    8% {  top: 42px;
+            opacity: 1; }
+    14% {  top: 300px;
+            opacity: 0; }
+    15% {  top: 42px;
+            opacity: 1; }
+    23% {  top: 300px;
+            opacity: 0; }
+    24% {  top: 42px;
+            opacity: 1; }
+    34% {  top: 300px;
+            opacity: 0; }
+    35% {  top: 42px;
+            opacity: 1; }
+    47% {  top: 300px;
+            opacity: 0; }
+    48% {  top: 42px;
+            opacity: 1; }
+    62% {  top: 300px;
+            opacity: 0; }
+    63% {  top: 42px;
+            opacity: 1; }
+    79% {  top: 300px;
+            opacity: 0; }
+    80% {  top: 42px;
+            opacity: 1; }
+    99% {  top: 300px;
+            opacity: 0; }
+    100% {  top: 42px;
+            opacity: 1; }
+}
+@keyframes blast {
+    0% { transform: scaleX(.01) scaleY(.01); }
+    25% { transform: scaleX(2) scaleY(1); }
+    97% { transform: scaleX(.03) scaleY(1); }
+    100% { transform: scaleX(.01) scaleY(.01); }
+}
+
+/*
+espresso = #330C00;
+water = rgba(0, 0, 255, .2);
+milk = #fffff0;
+syrup = #512A09;
+*/
 
 .base {
     position: absolute;
