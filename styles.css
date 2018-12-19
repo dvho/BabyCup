@@ -46,9 +46,8 @@ body {
         }
     @keyframes rotateDial1B {
         from { transform: rotate(0); }
-        to { transform: rotate(7200deg); }
+        to { transform: rotate(5400deg); }
         }
-
 .dial-2 {
     left: -30px;
     transform-origin: 50% 50%;
@@ -168,24 +167,32 @@ body {
 .pours {
     position: absolute;
     height: 207px;
-    width: 15px;
     margin-left: 50%;
     transform-origin: top;
     transform: scaleY(.01);
 }
-#milk-pour {
-    top: 0px;
-    left: -20px;
-    background-color: #fffff0;
-}
 #espresso-pour {
     top: 1px;
     left: -40px;
+    width: 15px;
     background-color: #330c00;
+}
+#milk-pour {
+    top: 0px;
+    left: -15px;
+    width: 20px;
+    background-color: #fffff0;
+}
+#water-pour {
+    top: 1px;
+    left: 8px;
+    width: 30px;
+    background-color: rgba(0, 0, 255, .25);
 }
 #syrup-pour {
     top: 1px;
-    left: 20px;
+    left: 30px;
+    width: 15px;
 }
 
 .dribbles {
@@ -198,13 +205,17 @@ body {
     transform: rotate(45deg) translateX(4px) translateY(4px);
     opacity: 0;
 }
-#milk-dribble {
-    left: -20px;
-    background-color: #fffff0;
-}
 #espresso-dribble {
     left: -40px;
     background-color: #330c00;
+}
+#milk-dribble {
+    left: -12px;
+    background-color: #fffff0;
+}
+#water-dribble {
+    left: 16px;
+    background-color: rgba(0, 0, 255, .25);
 }
 
 @keyframes pour {
@@ -219,48 +230,63 @@ body {
 @keyframes dribble {
     0% { top: 42px;
          opacity: 1; }
-    2% {  top: 200px;
-            opacity: 0; }
+    1% {  top: 175px;
+            opacity: .3; }
+    2% {  top: 30px;
+            opacity : 0; }
     3% {  top: 42px;
             opacity: 1; }
-    7% {  top: 200px;
+    7% {  top: 175px;
+            opacity: .3; }
+    8% {  top: 30px;
             opacity: 0; }
-    8% {  top: 42px;
-            opacity: 1; }
-    14% {  top: 200px;
+    9% {  top: 42px;
+             opacity : 1; }
+    14% {  top: 175px;
+            opacity: .3; }
+    15% {  top: 30px;
             opacity: 0; }
-    15% {  top: 42px;
-            opacity: 1; }
-    23% {  top: 200px;
+    18% {  top: 42px;
+             opacity : 1; }
+    23% {  top: 175px;
+            opacity: .3; }
+    24% {  top: 30px;
             opacity: 0; }
-    24% {  top: 42px;
-            opacity: 1; }
-    34% {  top: 200px;
+    29% {  top: 42px;
+             opacity : 1; }
+    34% {  top: 175px;
+            opacity: .3; }
+    35% {  top: 30px;
             opacity: 0; }
-    35% {  top: 42px;
-            opacity: 1; }
-    47% {  top: 200px;
+    42% {  top: 42px;
+             opacity : 1; }
+    47% {  top: 175px;
+            opacity: .3; }
+    48% {  top: 30px;
             opacity: 0; }
-    48% {  top: 42px;
-            opacity: 1; }
-    62% {  top: 200px;
+    57% {  top: 42px;
+             opacity : 1; }
+    62% {  top: 175px;
+            opacity: .3; }
+    63% {  top: 30px;
             opacity: 0; }
-    63% {  top: 42px;
-            opacity: 1; }
-    79% {  top: 200px;
+    74% {  top: 42px;
+            opacity : 1; }
+    79% {  top: 175px;
+            opacity: .3; }
+    80% {  top: 30px;
             opacity: 0; }
-    80% {  top: 42px;
-            opacity: 1; }
-    99% {  top: 200px;
+    94% {  top: 42px;
+            opacity : 1; }
+    99% {  top: 175px;
+            opacity: .3; }
+    100% {  top: 30px;
             opacity: 0; }
-    100% {  top: 42px;
-            opacity: 1; }
 }
 @keyframes blast {
     0% { transform: scaleX(.01) scaleY(.01); }
-    25% { transform: scaleX(2) scaleY(1); }
-    61% { transform: scaleX(.3) scaleY(1); }
-    97% { transform: scaleX(.03) scaleY(1); }
+    15% { transform: scaleX(2) scaleY(1); }
+    99% { transform: scaleX(.05) scaleY(1); }
     100% { transform: scaleX(.01) scaleY(.01); }
 }
 
@@ -300,16 +326,24 @@ syrup = #512A09;
     z-index: 15;
 }
 
-.on__button {
+#button {
     position: absolute;
     top: 22px;
-    left: -68px;
+    left: -67px;
     width: 126px;
     height: 9px;
     margin-left: 50%;
-    background-color: #f499b8;
     border: 5px solid #000;
-    border-radius: 6px 6px 6px 6px;
+    border-radius: 4px 4px 4px 4px;
+}
+.button__1 {
+    background-color: #0000d2;
+    box-shadow: 0px 0px 5px 2px #fff, 0px 0px 25px 2px rgba(28, 28, 255, .3);
+}
+.button__2 {
+    transform: scale(.97);
+    background-color: #FF3700;
+    box-shadow: 0px 0px 5px 2px #fff, 0px 0px 25px 2px rgba(255, 55, 0, 1);
 }
 
 /*---------------------------------------HERE'S WHERE ALL THE TOGGLING AND CLASS SWAPPING ANIMATION HAPPENS---------------------------------------*/
