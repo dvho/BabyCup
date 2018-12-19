@@ -445,7 +445,7 @@ const liquid4 = document.getElementById('syrup-pour');
 function syrupPour(color) {
     setTimeout(function() {
         liquid4.style.backgroundColor = color;
-        liquid4.style.animation = `blast 2s ease`;
+        liquid4.style.animation = `blast 2s linear`;
     }, 1500);
     setTimeout(function() {
         liquid4.style.animation = ``;
@@ -458,7 +458,7 @@ function waterPour() {
 }
 function waterStop() {
     liquid3a.style.animation = ``;
-    liquid3b.style.animation = `dribble 3.5s ease`;
+    liquid3b.style.animation = `dribble 3.5s linear`; //Having more than 2 positions in the keyframe seems to cause problems with all my custom bezier curves (overriding them as linear) so deceleration of dribble had to be depicted by the percentages themselves in the stylesheet, which ended working out better since I could control the rate at which drops fell without compromising gravitational integrity.
     setTimeout(function() {
         liquid3b.style.animation = ``;
     }, 3500);
@@ -473,7 +473,7 @@ function milkPour() {
         liquid2a.style.animation = ``;
     }, 5000);
     setTimeout(function() {
-        liquid2b.style.animation = `dribble 3s linear`; //Having more than 2 positions in the keyframe seems to cause problems with all my custom bezier curves (overriding them as linear) so deceleration of dribble had to be depicted by the percentages themselves in the stylesheet, which ended working out better since I could control the rate at which drops fell without compromising gravitational integrity
+        liquid2b.style.animation = `dribble 3s linear`; //Having more than 2 positions in the keyframe seems to cause problems with all my custom bezier curves (overriding them as linear) so deceleration of dribble had to be depicted by the percentages themselves in the stylesheet, which ended working out better since I could control the rate at which drops fell without compromising gravitational integrity.
     }, 5000);
     setTimeout(function() {
         liquid2b.style.animation = ``;
@@ -489,7 +489,7 @@ function espressoPour() {
         liquid1a.style.animation = ``;
     }, 3000);
     setTimeout(function() {
-        liquid1b.style.animation = `dribble 3s linear`; //Having more than 2 positions in the keyframe seems to cause problems with all my custom bezier curves (overriding them as linear) so deceleration of dribble had to be depicted by the percentages themselves in the stylesheet, which ended working out better since I could control the rate at which drops fell without compromising gravitational integrity
+        liquid1b.style.animation = `dribble 3s linear`; //Having more than 2 positions in the keyframe seems to cause problems with all my custom bezier curves (overriding them as linear) so deceleration of dribble had to be depicted by the percentages themselves in the stylesheet, which ended working out better since I could control the rate at which drops fell without compromising gravitational integrity.
     }, 3000);
     setTimeout(function() {
         liquid1b.style.animation = ``;
@@ -500,6 +500,9 @@ function espressoPour() {
 function allowButtonEvents() {
     ['mousedown', 'touchstart'].forEach(function(e) {
         button1.addEventListener(e, function() {
+            if (e = 'touchstart') {
+                //e.preventDefault(); //In this case, prevents selecting the button on touchscreens when touching long enough to pour water.
+            }
             button1.classList.add('button__2');
             waterPour();
         });
