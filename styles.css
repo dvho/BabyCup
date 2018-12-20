@@ -36,9 +36,30 @@ body {
     box-shadow: -1px -1px 14px -2px rgba(109, 109, 255, .8), 1px -1px 14px -2px rgba(109, 109, 255, .8);
 }
 
+.text {
+    position: absolute;
+    font-size: 26px;
+    font-family: 'snell roundhand';
+}
+.espresso {
+    margin-top: 47px;
+    text-align: left;
+    margin-left: 169px;
+}
+.milk {
+    margin-top: 49px;
+    text-align: left;
+    margin-left: 308px;
+}
+.syrup {
+    margin-top: 47px;
+    text-align: left;
+    margin-left: 428px;
+}
+
 .dials {
     position: absolute;
-    top: 24px;
+    top: 12px;
     width: 48px;
     height: 48px;
     margin-left: 50%;
@@ -229,7 +250,7 @@ body {
 }
 
 @keyframes pour {
-    0% { transform: translateX(0px) scaleX(.01) scaleY(.01); }
+    0% { transform: translateX(-1px) scaleX(.01) scaleY(.01); }
     10% { transform: scaleX(1) scaleY(1); }
     40% { transform: translateX(0px); }
     50% { transform: translateX(-1px); }
@@ -303,13 +324,6 @@ body {
     100% { transform: scaleX(.01) scaleY(.01); }
 }
 
-/*
-espresso = #330C00;
-water = rgba(0, 0, 255, .2);
-milk = #fffff0;
-syrup = #512A09;
-*/
-
 .base {
     position: absolute;
     top: 442px;
@@ -341,7 +355,7 @@ syrup = #512A09;
 
 #button {
     position: absolute;
-    top: 22px;
+    top: 16px;
     left: -67px;
     width: 126px;
     height: 9px;
@@ -357,6 +371,11 @@ syrup = #512A09;
     transform: scale(.97);
     background-color: #FF3700;
     box-shadow: 0px 0px 5px 2px #fff, 0px 0px 25px 2px rgba(255, 55, 0, 1);
+}
+.water {
+    margin-top: 14px;
+    text-align: left;
+    margin-left: 305px;
 }
 
 /*---------------------------------------HERE'S WHERE ALL THE TOGGLING AND CLASS SWAPPING ANIMATION HAPPENS---------------------------------------*/
