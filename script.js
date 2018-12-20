@@ -569,7 +569,17 @@ function dial2Spin() {
 
 //DIAL3 ALTERNATE ANIMATION HAPPENS ON TOUCHSTART OR CLICK, ITS EVENT LISTENERS ARE REMOVED, AS SOON AS ANIMATION IS COMPLETE THE DEFAULT ANIMATION IS REINSTATED AND EVENT LISTENERS ARE ADDED AGAIN
 function dial3Spin() {
-    let color = `#DCA352`; //Eventually change to crazy multicolors that cycle randomly
+    let color = Math.ceil(Math.random() * 8);
+    if (color === 1) {color = `#ed0000`}; //Cherry
+    if (color === 2) {color = `#dc0058`}; //Strawberry
+    if (color === 3) {color = `#f700bd`}; //Watermellon
+    if (color === 4) {color = `#0003cb`}; //Blueberry
+    if (color === 5) {color = `#7500af`}; //Mixed berry
+    if (color === 6) {color = `#4c0064`}; //Grape
+    if (color === 7) {color = `#dca352`}; //Light caramel
+    if (color === 8) {color = `#8c5615`}; //Dark caramel
+    if (color === 9) {color = `#3f1f09`}; //Chocolate
+    console.log(color);
     syrupPour(color);
     dial3.style.animation = `rotateDial3B 7s ease`; //Custom cubic bezier curves are causing an initial jerking of the dials, pre-defined "ease" works.
     removeDialEvents(dial3);
