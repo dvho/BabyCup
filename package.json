@@ -1,7 +1,7 @@
 {
-  "name": "babycup",
+  "name": "Baby Cup",
   "version": "1.0.0",
-  "description": "babycup project",
+  "description": "Baby Cup is a fully autonomous Artificial Emotional Intelligence UI created entirely in HTML/CSS/JavaScript.",
   "main": "script.js",
   "scripts": {
     "dev": "webpack --mode development",
