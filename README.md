@@ -1,7 +1,7 @@
 # Baby Cup
 Baby Cup is a fully autonomous Artificial Emotional Intelligence UI. I created him entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries, or dependencies (except for Webpack and Babel for your convenience).
 
-<img src="https://user-images.githubusercontent.com/45696445/51087307-aae3ed80-171f-11e9-9f49-7a4f6b017cea.jpg" width=500>
+<img src="https://user-images.githubusercontent.com/45696445/51087307-aae3ed80-171f-11e9-9f49-7a4f6b017cea.jpg" width=600 align="middle">
 
 _________________________
 
