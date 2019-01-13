@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: #fff;
 }
 
 .babyCup-1 {
@@ -33,7 +33,7 @@ body {
     background-color: #e7f3dd;
     border: 8px solid #000;
     border-radius: 68px 68px 0px 0px;
-    box-shadow: -1px -1px 14px -2px rgba(109, 109, 255, .8), 1px -1px 14px -2px rgba(109, 109, 255, .8);
+    box-shadow: -1px -1px 14px -2px rgb(99, 0, 0, .45), 1px -1px 14px -2px rgb(99, 0, 0, .45);
 }
 
 .text {
@@ -146,7 +146,7 @@ body {
     border-style: solid;
     border-color: #000;
     border-width: 8px 8px 6px 8px;
-    box-shadow: -1px 6px 14px -2px rgba(109, 109, 255, .8), 1px 6px 14px -2px rgba(109, 109, 255, .8);
+    box-shadow: -1px 6px 14px -2px rgb(99, 0, 0, .45), 1px 6px 14px -2px rgb(99, 0, 0, .45);
 }
 
 .back {
@@ -160,7 +160,7 @@ body {
     border-style: solid;
     border-color: #000;
     border-width: 6px 8px 8px 8px;
-    box-shadow: -1px 6px 14px -2px rgba(109, 109, 255, .8), 1px 6px 14px -2px rgba(109, 109, 255, .8);
+    box-shadow: -1px 6px 14px -2px rgb(99, 0, 0, .45), 1px 6px 14px -2px rgb(99, 0, 0, .45);
 }
 
 .drip {
@@ -349,7 +349,7 @@ body {
     background-color: #e7f3dd;
     border: 8px solid #000;
     border-radius: 0px 0px 90px 90px;
-    box-shadow: -2px 2px 14px -3px rgba(109, 109, 255, .8), 2px 2px 14px -3px rgba(109, 109, 255, .8);
+    box-shadow: -2px 2px 14px -3px rgb(99, 0, 0, .45), 2px 2px 14px -3px rgb(99, 0, 0, .45);
     z-index: 15;
 }
 

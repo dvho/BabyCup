@@ -1,4 +1,4 @@
-var count = 0; //Count begins at god().
+var count = 0; //Count begins at controller().
 var mood = 5; //Initialize mood.
 var feelings = 0; //Initialize feelings.
 var name = false; //Initialize name.
@@ -93,7 +93,7 @@ function irisRightEyeSwitch(position) {
     parent.insertAdjacentHTML('beforeend', newTempStr);
 };
 
-//FUNCTION THAT CALLS THE TWO IRIS FUNCTIONS SO THEY CAN HAVE THEIR OWN SEPERATE TIMING WITHIN THE INTERVAL THAT GOD() DOESN'T CALL THEM/CLEAR THE ASSOCIATED TIMEOUT
+//FUNCTION THAT CALLS THE TWO IRIS FUNCTIONS SO THEY CAN HAVE THEIR OWN SEPERATE TIMING WITHIN THE INTERVAL THAT CONTROLLER() DOESN'T CALL THEM/CLEAR THE ASSOCIATED TIMEOUT
 function eyeIrises() {
     let position;
     if (name == true) {
@@ -121,7 +121,7 @@ function blink() {
         eyesToggle();
     }, blinkSuspenseTime)
 };
-//BLINK FUNTION CAN'T BE CALLED FROM GOD, IT HAS TO BE CALLED FROM A FUNCTION WITH ITS OWN SETTIMEOUT TO DESIGNATE THE RATE OF BLINKING, THEN THE CLEARTIMEOUT HAS TO HAPPEN FROM GOD
+//BLINK FUNTION CAN'T BE CALLED FROM CONTROLLER, IT HAS TO BE CALLED FROM A FUNCTION WITH ITS OWN SETTIMEOUT TO DESIGNATE THE RATE OF BLINKING, THEN THE CLEARTIMEOUT HAS TO HAPPEN FROM CONTROLLER
 function callBlink() {
     blink();
     tt = setTimeout(callBlink, 2500);
@@ -376,7 +376,7 @@ function emotion() {
 };
 
 //IMMEDIATELY INVOKED TAIL RECURSIVE FUNCTION (CALLS ITSELF, THEN CONTINUES TO CALL ITSELF AFTER CALLING ALL THE OTHER FUNCTIONS)
-(function god() {
+(function controller() {
     var rate;
     count += 1;
 
@@ -398,7 +398,7 @@ function emotion() {
             eyeIrises();
             callBlink();
             emotion();
-            god();
+            controller();
     }, rate);
 }());
 
