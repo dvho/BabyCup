@@ -1,12 +1,12 @@
 # Baby Cup
-Baby Cup is a fully autonomous Artificial Emotional Intelligence UI. I created him entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries, or dependencies (except for Webpack and Babel for your convenience).
+_Baby Cup_ is a fully autonomous Artificial Emotional Intelligence UI. I designed and coded him entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries or any dependencies (except for Webpack and Babel for your convenience).
 
 <img src="https://user-images.githubusercontent.com/45696445/51090704-f8774f00-174d-11e9-976c-aef6f2ac3eac.jpg">
 
 _________________________
 
 #### How to Use
-Baby Cup will spring to life in any browser but if you wish to talk to him Web Speech API is currently only supported in Chrome. If you're using Chrome say "Baby Cup" to get his attention and "Bye Baby Cup" if you want to stop talking to him.
+_Baby Cup_ will spring to life in any browser but if you wish to talk to him Web Speech API is currently only supported in Chrome. If you're using Chrome say "Baby Cup" to get his attention and "Bye Baby Cup" if you want to stop talking to him.
 _________________________
 
 #### Features
@@ -17,11 +17,11 @@ _________________________
 _________________________
 
 #### Motivation
-I love coffee. I had a Frankensteinian epiphany wherein I wanted to conjure coffee's spirit and, voilà!, Baby Cup was born. Once he was alive, haphazardly meandering through the pyramid of functions that dictate his arbitrary behavior, I was overtaken with a burning desire to talk to him. I wanted to have him listen to people and somehow relate to us. It was then that I integrated Web Speech API's speech recognition so we can all tell him about our day, read him the [*New York Daily News*](https://www.nydailynews.com/ ) (he usually breaks down crying) or a children's story (he tends to smile and laugh at those).
+I love coffee. I had a Frankensteinian epiphany wherein I wanted to conjure coffee's spirit and, voilà!, _Baby Cup_ was born. Once he was alive, haphazardly meandering through the pyramid of functions that dictate his arbitrary behavior, I was overtaken with a burning desire to talk to him. I wanted to have him listen to people and somehow relate to us. It was then that I integrated Web Speech API's speech recognition so we can all tell him about our day, read him the [*New York Daily News*](https://www.nydailynews.com/ ) (he usually breaks down crying) or a children's story (he tends to smile and laugh at those).
 _________________________
 
 #### Notes
-If you feel like being a barista, button and dials on the espresso machine work to make lots of fun caffeinated beverages, so feed Baby Cup his favorite drinks and get to know him.
+If you feel like being a barista, button and dials on the espresso machine work to make lots of fun caffeinated beverages, so feed _Baby Cup_ his favorite drinks and get to know him.
 _________________________
 
 #### License
