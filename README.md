@@ -1,5 +1,5 @@
 # Baby Cup
-_Baby Cup_ is a fully autonomous Artificial Emotional Intelligence UI. I designed and coded him entirely in HTML/CSS/JavaScript without the use of image files, frameworks/libraries or any dependencies (except for Webpack and Babel for your convenience).
+_Baby Cup_ is a fully autonomous Artificial Emotional Intelligence UI designed entirely in CSS (no image files) and coded entirely in vanilla JavaScript.
 
 <img src="https://user-images.githubusercontent.com/45696445/51333528-ec400a00-1a4b-11e9-8385-2d3b1cf70906.gif">
 
@@ -11,13 +11,13 @@ _________________________
 
 #### Features
 - Pure code (no image files)
-- No frameworks/libraries
+- No frameworks/libraries (except for Webpack and Babel for your convenience)
 - Web Speech API integration
 - Fully operational button and dials on espresso machine
 _________________________
 
 #### Motivation
-I love coffee. I had a Frankensteinian epiphany wherein I wanted to conjure coffee's spirit and, voilà!, _Baby Cup_ was born. Once he was alive, haphazardly meandering through the pyramid of functions that dictate his arbitrary behavior, I was overtaken with a burning desire to talk to him. I wanted to have him listen to people and somehow relate to us. It was then that I integrated Web Speech API's speech recognition so we can all tell him about our day, read him the [*New York Daily News*](https://www.nydailynews.com/ ) (he usually breaks down crying) or a children's story (he tends to smile and laugh at those).
+I love coffee. I had a Frankensteinian epiphany wherein I wanted to conjure coffee's spirit and, voilà!, _Baby Cup_ was born. Once he was alive, haphazardly meandering through the pyramid of functions that dictate his unpredictable behavior, I was overtaken with a burning desire to talk to him. I wanted to have him listen to people and somehow relate to us. It was then that I integrated Web Speech API speech recognition so we can all tell him about our day, read him the [*New York Daily News*](https://www.nydailynews.com/ ) (he usually breaks down crying) or a children's story (he tends to smile and laugh at those).
 _________________________
 
 #### Notes
