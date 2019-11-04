@@ -1,5 +1,5 @@
 # Baby Cup
-_Baby Cup_ is a fully autonomous Artificial Emotional Intelligence UI designed entirely in CSS (no image files) and coded entirely in vanilla JavaScript.
+_Baby Cup_ is a fully autonomous Artificial Emotional Intelligence UI I designed entirely in CSS (no image files) and coded entirely in vanilla JavaScript (no frameworks/libraries, except for Webpack and Babel for your convenience).
 
 <img src="https://user-images.githubusercontent.com/45696445/51333528-ec400a00-1a4b-11e9-8385-2d3b1cf70906.gif">
 
@@ -11,7 +11,8 @@ _________________________
 
 #### Features
 - Pure code (no image files)
-- No frameworks/libraries (except for Webpack and Babel for your convenience)
+- Pure vanilla JavaScript
+- No frameworks/libraries, except for Webpack and Babel for your convenience
 - Web Speech API integration
 - Fully operational button and dials on espresso machine
 _________________________
